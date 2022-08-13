@@ -1,0 +1,33 @@
+<html>
+    <body>
+        <h1>{{title}}</h1>
+         {% for p in products %}
+          <br> 
+          {{forloop.counter}} {{p}}
+       {% endfor %}       
+       <hr><hr>
+       <table border = 2>
+        <tr>
+            <td>Name</td>
+            <td>Duration</td>
+            <td>Fees</td>
+        </tr>
+        
+        {% for course in info %}
+        {% if course.fees > 15 %}
+        <tr>
+            <td>{{course.name}}</td>
+            <td>{{course.duration}}</td>
+            <td>{{course.fees}}</td>
+        </tr>
+        {% else %}
+        <tr bgcolor = "lightblue">
+            <td>{{course.name}}</td>
+            <td>{{course.duration}}</td>
+            <td>{{course.fees}}</td>
+            </tr>
+        {% endif %}
+        {% endfor%}
+       </table> 
+    </body>
+</html>
